@@ -1,4 +1,5 @@
 import 'package:fashion_app/pages/details_page.dart';
+import 'package:fashion_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,8 +15,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: "details",
-      routes: {"details": (BuildContext context) => DetailsPage()},
+      initialRoute: "home",
+      routes: {
+        "home": (BuildContext context) => HomePage(),
+        "details": (BuildContext context) => DetailsPage()
+      },
     );
   }
 }

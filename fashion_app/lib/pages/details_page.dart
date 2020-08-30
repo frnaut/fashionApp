@@ -8,11 +8,13 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
+    final String img = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          _cover(context),
-          _appbar(),
+          _cover(context, img),
+          _appbar(context),
           Column(
             children: <Widget>[
               Expanded(
@@ -26,7 +28,7 @@ class _DetailsPageState extends State<DetailsPage> {
     );
   }
 
-  Widget _appbar() {
+  Widget _appbar(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 15.0),
       child: Container(
@@ -34,11 +36,16 @@ class _DetailsPageState extends State<DetailsPage> {
         color: Colors.transparent,
         child: Row(
           children: <Widget>[
-            Icon(Icons.arrow_back_ios),
+            IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () {},
+            ),
             Expanded(child: Container()),
             IconButton(
-              icon: Icon(Icons.shopping_basket),
-              onPressed: () {},
+              icon: Icon(Icons.local_mall),
+              onPressed: () {
+                Navigator.of(context).pushNamed("home");
+              },
             )
           ],
         ),
@@ -46,13 +53,12 @@ class _DetailsPageState extends State<DetailsPage> {
     );
   }
 
-  Widget _cover(BuildContext context) {
+  Widget _cover(BuildContext context, String img) {
     final size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.6,
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/img/img2.jpg"), fit: BoxFit.cover)),
+          image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover)),
     );
   }
 
