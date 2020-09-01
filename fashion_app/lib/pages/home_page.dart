@@ -66,14 +66,14 @@ class _HomePageState extends State<HomePage> {
                 _verticalCard(context, "assets/img/img3.jpg"),
                 _verticalCard(context, "assets/img/img4.jpg")
               ]),
-              TableRow(children: [
-                _verticalCard(context, "assets/img/img5.jpg"),
-                _verticalCard(context, "assets/img/img2.jpg")
-              ]),
-              TableRow(children: [
-                _verticalCard(context, "assets/img/img1.jpg"),
-                _verticalCard(context, "assets/img/img3.jpg")
-              ])
+              // TableRow(children: [
+              //   _verticalCard(context, "assets/img/img5.jpg"),
+              //   _verticalCard(context, "assets/img/img2.jpg")
+              // ]),
+              // TableRow(children: [
+              //   _verticalCard(context, "assets/img/img1.jpg"),
+              //   _verticalCard(context, "assets/img/img3.jpg")
+              // ])
             ]),
           )
         ],

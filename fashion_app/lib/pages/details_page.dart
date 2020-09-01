@@ -38,14 +38,14 @@ class _DetailsPageState extends State<DetailsPage> {
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.arrow_back_ios),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed("home");
+              },
             ),
             Expanded(child: Container()),
             IconButton(
               icon: Icon(Icons.local_mall),
-              onPressed: () {
-                Navigator.of(context).pushNamed("home");
-              },
+              onPressed: () {},
             )
           ],
         ),
@@ -55,10 +55,16 @@ class _DetailsPageState extends State<DetailsPage> {
 
   Widget _cover(BuildContext context, String img) {
     final size = MediaQuery.of(context).size;
+
     return Container(
       height: size.height * 0.6,
-      decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover)),
+      width: double.infinity,
+      child: Image(
+        image: AssetImage(
+          img,
+        ),
+        fit: BoxFit.cover,
+      ),
     );
   }
 
